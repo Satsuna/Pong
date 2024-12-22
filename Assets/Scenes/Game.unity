@@ -1754,12 +1754,14 @@ MonoBehaviour:
   Ball: {fileID: 235101969}
   ballSpeed: 5
   ballCurrentSpeed: 0
-  playerSpeed: 5
   playerSprintSpeed: 10
-  playerCurrentSpeed: 0
   Player1: {fileID: 1778182871}
+  player1Speed: 5
+  player1CurrentSpeed: 0
   Player1Goal: {fileID: 1465221055}
   Player2: {fileID: 885393027}
+  player2Speed: 5
+  player2CurrentSpeed: 0
   Player2Goal: {fileID: 1153026804}
   Player1Text: {fileID: 1951328121}
   Player2Text: {fileID: 1527678052}

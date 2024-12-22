@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //Player 1 Movement
         if (isP1) {
             movement = Input.GetAxisRaw("Vertical");
 
@@ -39,6 +40,8 @@ public class Player : MonoBehaviour
                 gameManager.player1CurrentSpeed = gameManager.player1Speed;
             }
         }
+
+        //Player 2 Movement
         else {
             movement = Input.GetAxisRaw("Vertical2");
 
@@ -53,9 +56,12 @@ public class Player : MonoBehaviour
     }
 
     void FixedUpdate() {
+        //Player 1 Speed
         if (isP1) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, movement * gameManager.player1CurrentSpeed);
         }
+        
+        //Player 2 Speed
         else {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, movement * gameManager.player2CurrentSpeed);
         }
