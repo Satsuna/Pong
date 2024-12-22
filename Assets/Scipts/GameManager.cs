@@ -10,16 +10,18 @@ public class GameManager : MonoBehaviour
     public float ballCurrentSpeed;
 
     [Header("Players")]
-    public float playerSpeed;
     public float playerSprintSpeed;
-    public float playerCurrentSpeed;
 
     [Header("Player 1")]
     public GameObject Player1;
+    public float player1Speed;
+    public float player1CurrentSpeed;
     public GameObject Player1Goal;
 
     [Header("Player 2")]
     public GameObject Player2;
+    public float player2Speed;
+    public float player2CurrentSpeed;
     public GameObject Player2Goal;
 
     [Header("Score UI")]

@@ -31,23 +31,34 @@ public class Player : MonoBehaviour
     {
         if (isP1) {
             movement = Input.GetAxisRaw("Vertical");
+
+            if (Input.GetKey(Dash)) {
+                gameManager.player1CurrentSpeed = gameManager.playerSprintSpeed;
+            }
+            else {
+                gameManager.player1CurrentSpeed = gameManager.player1Speed;
+            }
         }
         else {
             movement = Input.GetAxisRaw("Vertical2");
-        }
 
-        if (Input.GetKey(Dash)) {
-            gameManager.playerCurrentSpeed = gameManager.playerSprintSpeed;
+            if (Input.GetKey(Dash)) {
+                gameManager.player2CurrentSpeed = gameManager.playerSprintSpeed;
+            }
+            else {
+                gameManager.player2CurrentSpeed = gameManager.player2Speed;
+            }
         }
-        else {
-            gameManager.playerCurrentSpeed = gameManager.playerSpeed;
-        }
-
         Ability();
     }
 
     void FixedUpdate() {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, movement * gameManager.playerCurrentSpeed);
+        if (isP1) {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, movement * gameManager.player1CurrentSpeed);
+        }
+        else {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, movement * gameManager.player2CurrentSpeed);
+        }
     }
 
     public void Reset() {
